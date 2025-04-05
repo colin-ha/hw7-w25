@@ -6,6 +6,9 @@ window.addEventListener("load", function() {
 	document.getElementById("play").addEventListener("click", function(){
 		let video = document.getElementById("player1");
 		video.play();
+
+		// also update volume WHEN I click play [sic]
+		document.getElementById("volume").innerText = video.volume * 100 + "%";
 	})
 
 	document.getElementById("pause").addEventListener("click", function(){
@@ -51,9 +54,6 @@ window.addEventListener("load", function() {
 		video.volume = this.value / 100;
 		document.getElementById("volume").innerText = video.volume * 100 + "%";
 	})
-
-	let video = document.getElementById("player1");
-	document.getElementById("volume").innerText = video.volume * 100 + "%";
 
 	document.getElementById("vintage").addEventListener("click", function(){
 		let video = document.getElementById("player1");
